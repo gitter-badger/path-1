@@ -1,0 +1,3 @@
+Cosa fare in caso di crash?
+Da spotlight su Apple cercate 'Console', e da qui fate 'Rapporti diagnostica utente'. A questo punto cercate il log del crash e me lo mandate.
+Il caso migliore e' quello in cui riuscite a ricreare il crash; in quel caso scrivetemi cosa avete fatto in maniera che io possa ricrearlo da Linux dove e' molto piu' semplice fare debug.
