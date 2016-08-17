@@ -1,4 +1,4 @@
-#N canvas 574 42 700 466 10;
+#N canvas 446 34 700 466 10;
 #X floatatom 156 407 7 0 0 0 - - -, f 7;
 #X floatatom 183 424 7 0 0 0 - - -, f 7;
 #X floatatom 206 209 5 0 0 0 - - -, f 5;
@@ -6541,8 +6541,8 @@
 #X obj 341 266 tabwrite~ cello;
 #X msg 351 224 start;
 #X msg 29 42 add cello;
-#X floatatom 452 194 5 0 0 0 - - -, f 5;
-#X msg 452 213 threshold \$1;
+#X floatatom 452 203 5 0 0 0 - - -, f 5;
+#X msg 452 222 threshold \$1;
 #X msg 216 160 open baritono.aif;
 #X msg 204 140 start;
 #X obj 204 180 readsf~ 1;
@@ -6572,16 +6572,16 @@
 #X obj 55 187 r grain;
 #X obj 61 207 r newgrain;
 #X obj 444 266 s newgrain;
-#X obj 444 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 444 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 533 238 metro 1000;
-#X obj 533 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 533 247 metro 1000;
+#X obj 533 161 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 541 216 tempo \$1 samp;
-#X floatatom 541 197 5 0 0 0 - - -, f 5;
-#X msg 541 174 64;
-#X msg 569 174 256;
-#X msg 599 174 1024;
+#X msg 541 225 tempo \$1 samp;
+#X floatatom 541 206 5 0 0 0 - - -, f 5;
+#X msg 541 183 64;
+#X msg 569 183 256;
+#X msg 599 183 1024;
 #X obj 341 204 adc~ 2;
 #X obj 582 321 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X obj 10 375 pvu~;
@@ -6589,10 +6589,14 @@
 #X obj 581 293 r dac1;
 #X msg 21 20 analyze -o baritono.aif;
 #X obj 86 287 r news;
-#X msg 576 29 open;
-#X msg 591 79 print;
-#X msg 584 53 wclose;
-#X obj 576 108 s news;
+#X msg 556 5 open;
+#X msg 599 136 print;
+#X msg 564 29 wclose;
+#X obj 556 159 s news;
+#X msg 583 72 read path~2.txt;
+#X msg 594 92 readagain;
+#X msg 575 52 read path~.txt;
+#X msg 595 116 write gatto.txt;
 #X connect 2 0 36 0;
 #X connect 3 0 36 1;
 #X connect 4 0 36 2;
@@ -6665,3 +6669,7 @@
 #X connect 71 0 74 0;
 #X connect 72 0 74 0;
 #X connect 73 0 74 0;
+#X connect 75 0 74 0;
+#X connect 76 0 74 0;
+#X connect 77 0 74 0;
+#X connect 78 0 74 0;
