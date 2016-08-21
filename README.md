@@ -7,13 +7,15 @@ L'attuale versione e' la 1.5.5. Controllate nella parent window di avere la vers
 
 Tutto il materiale e' liberamente utilizzabile. path~ verra' rilasciato sotto licenza GPL 3.0. baritono.aif fa parte di Dispersion de trajectoires di Jose' Miguel Fernandez.
 
+Nel dubbio,parti con path~-startwithme.pd :)
+
 Per domande e problemi: mm dot markidis at gmail dot com .
 Per essere aggiunti alla mailing list: mm dot markidis at gmail dot com .
 
 EN.
 path~ is a Pd concatenative synthesis external. The main application is audio mosaicing. Download the entire folder, then start analyzing your favourite sample(s) and use an adc~ or a readsf~ as a live input. Banging path~ will give you a grain obtained by similarity reconstruction from your start sample.
 Feel free to use path~; it will be released under GPL 3.0 license. baritono.aif is taken from Jose' Miguel Fernandez's Dispersion de trajectoires.
-Actual version is 1.5.5. Check on your parent window to be update.
+Actual version is 1.5.5. Check on your parent window to be update. Start with path~-startwithme.pd patch :)
 
 For questions and bugs: mm dot markidis at gmail dot com .
 To be added to the mailing list: mm dot markidis at gmail dot com .
