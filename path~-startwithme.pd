@@ -12,9 +12,9 @@
 #X floatatom 788 35 5 0 0 0 - - -, f 5;
 #X obj 26 43 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X msg 390 131 hopsize 100 3000;
-#X msg 371 91 amp 0.2 0.8;
-#X msg 361 70 amp 0.5;
+#X msg 380 140 hopsize 100 3000;
+#X msg 362 84 amp 0.2 0.8;
+#X msg 355 50 amp 0.5;
 #X floatatom 96 443 5 0 0 0 - - -, f 5;
 #X floatatom 172 441 5 0 0 0 - - -, f 5;
 #X floatatom 210 457 5 0 0 0 - - -, f 5;
@@ -6555,9 +6555,9 @@
 #X obj 153 174 adc~ 1;
 #X msg 299 335 stop;
 #X obj 138 229 +~;
-#X obj 341 158 s grain;
-#X floatatom 341 31 5 0 0 0 - - -, f 5;
-#X msg 341 50 concatenate \$1;
+#X obj 348 160 s grain;
+#X floatatom 348 11 5 0 0 0 - - -, f 5;
+#X msg 348 30 concatenate \$1;
 #X obj 45 166 r grain;
 #X obj 51 186 r newgrain;
 #X obj 444 356 s newgrain;
@@ -6601,7 +6601,7 @@
 1;
 #X obj 805 153 s loudness;
 #X obj 78 256 r loudness;
-#X msg 378 112 hopsize 92;
+#X msg 367 119 hopsize 92;
 #N canvas 501 79 450 300 flag 0;
 #X text 22 36 path~ prende come argomenti di inizializzazione k \,
 melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
@@ -6689,10 +6689,10 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X obj 91 279 r add;
 #X msg 21 20 analyze -o baritono.aif;
 #X msg 697 256 add \$1;
-#X msg 716 277 add -f \$1;
-#X msg 734 297 preadd \$1;
-#X msg 746 318 swap;
-#X obj 697 352 s add;
+#X msg 706 292 add -f \$1;
+#X msg 724 312 preadd \$1;
+#X msg 736 333 swap;
+#X obj 697 356 s add;
 #X obj 281 356 tabwrite~ \$0-cello;
 #X obj 696 187 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
@@ -6741,16 +6741,22 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X text 546 417 3) loop readsf~;
 #X text 546 405 2) dsp on;
 #X text 547 431 4) bang!!;
-#X text 22 2 start here!!!;
 #X text 550 464 5) put your samples in the same path~.pd_darwin/linux
 folder and try with your samples...;
 #X text 322 294 record live stuff;
 #X text 464 271 bang here;
 #X text 551 251 tired to bang?;
-#X text 379 30 be rational :);
+#X text 386 10 be rational :);
 #X text 487 294 btw 0/1;
 #X text 245 410 more init flag?;
 #X text 827 110 rms or peak?;
+#X text 353 203 target input volume;
+#X text 229 29 readsf~ or adc?;
+#X text 364 68 all amp grains 0.5;
+#X text 371 103 random btw 0.2/0.8;
+#X text 22 2 start here!!! -o for onset;
+#X text 667 140 after preanalyze swap!;
+#X text 714 272 add recorded material in \$0-cello;
 #X connect 2 0 66 1;
 #X connect 3 0 0 0;
 #X connect 3 1 1 0;

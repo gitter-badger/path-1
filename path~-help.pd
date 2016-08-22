@@ -10,10 +10,10 @@
 1;
 #X obj 934 12 dsp;
 #X floatatom 934 34 5 0 0 0 - - -, f 5;
-#X obj 26 43 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 26 43 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X msg 490 193 hopsize 100 3000;
-#X msg 471 153 amp 0.2 0.8;
+#X msg 460 193 hopsize 100 3000;
+#X msg 441 153 amp 0.2 0.8;
 #X floatatom 96 443 5 0 0 0 - - -, f 5;
 #X floatatom 172 441 5 0 0 0 - - -, f 5;
 #X floatatom 210 457 5 0 0 0 - - -, f 5;
@@ -6537,26 +6537,26 @@
 #X msg 401 314 start;
 #X floatatom 522 293 5 0 0 0 - - -, f 5;
 #X msg 522 312 threshold \$1;
-#X msg 214 140 start;
-#X obj 214 180 readsf~ 1;
-#X obj 214 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 266 158 start;
+#X obj 266 198 readsf~ 1;
+#X obj 266 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 214 119 t b b;
-#X obj 141 46 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 266 137 t b b;
+#X obj 193 64 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 175 68 expr 1 - $f1;
-#X floatatom 138 66 5 0 0 0 - - -, f 5;
-#X floatatom 175 90 5 0 0 0 - - -, f 5;
-#X obj 138 83 line~;
-#X obj 175 107 line~;
-#X obj 138 207 *~;
-#X obj 175 207 *~;
-#X obj 153 174 adc~ 1;
+#X obj 227 86 expr 1 - $f1;
+#X floatatom 190 84 5 0 0 0 - - -, f 5;
+#X floatatom 227 108 5 0 0 0 - - -, f 5;
+#X obj 190 101 line~;
+#X obj 227 125 line~;
+#X obj 190 225 *~;
+#X obj 227 225 *~;
+#X obj 205 192 adc~ 1;
 #X msg 409 335 stop;
-#X obj 138 229 +~;
-#X obj 441 220 s grain;
-#X floatatom 441 93 5 0 0 0 - - -, f 5;
-#X msg 441 112 concatenate \$1;
+#X obj 190 247 +~;
+#X obj 411 220 s grain;
+#X floatatom 411 93 5 0 0 0 - - -, f 5;
+#X msg 411 112 concatenate \$1;
 #X obj 45 166 r grain;
 #X obj 51 186 r newgrain;
 #X obj 514 356 s newgrain;
@@ -6580,29 +6580,29 @@
 #X msg 684 115 write gatto.txt;
 #X obj 62 211 r gui;
 #X obj 645 158 s gui;
-#X obj 790 156 s swap;
+#X obj 780 176 s swap;
 #X obj 69 233 r swap;
-#X msg 815 121 swap;
+#X msg 815 141 swap;
 #X obj 21 419 path~ 64 250 -out 2 -virtual 128;
 #X obj 21 509 dac~ 1 2, f 9;
-#X msg 804 76 preanalyze -o baritono.aif;
-#X obj 202 265 *~;
-#X obj 220 203 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X msg 794 76 preanalyze -o baritono.aif;
+#X obj 254 283 *~;
+#X obj 272 221 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 217 242 line~;
-#X floatatom 217 223 5 0 0 0 - - -, f 5;
+#X obj 269 260 line~;
+#X floatatom 269 241 5 0 0 0 - - -, f 5;
 #X obj 468 59 s listpack;
 #X obj 75 254 r listpack;
-#X obj 192 3 loadbang;
-#X msg 192 25 0;
-#X msg 790 54 preanalyze -o baritono24.wav;
-#X msg 226 160 open baritono.aif;
-#X msg 951 130 loudness \$1;
-#X obj 951 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 190 21 loadbang;
+#X msg 190 43 0;
+#X msg 780 54 preanalyze -o baritono24.wav;
+#X msg 278 178 open baritono.aif;
+#X msg 810 225 loudness \$1;
+#X obj 810 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 951 152 s loudness;
+#X obj 810 247 s loudness;
 #X obj 98 276 r loudness;
-#X msg 478 174 hopsize 92;
+#X msg 448 174 hopsize 92;
 #X obj 468 37 pack f f f f;
 #X obj 468 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -6617,7 +6617,7 @@
 #X text 22 36 path~ prende come argomenti di inizializzazione k \,
 melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 -nomfcc;
-#X restore 228 418 pd flag;
+#X restore 230 420 pd flag;
 #N canvas 340 71 537 300 spat 0;
 #X obj 133 242 outlet~ L;
 #X obj 253 243 outlet~ R;
@@ -6626,7 +6626,7 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X obj 143 102 inlet~ L;
 #X obj 231 103 inlet~ R;
 #X obj 318 101 inlet toogle;
-#X obj 340 147 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 340 147 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 340 167 line~ 50;
 #X floatatom 420 192 5 0 0 0 - - -, f 5;
@@ -6693,10 +6693,10 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X connect 7 0 0 0;
 #X connect 8 0 1 0;
 #X restore 21 482 pd spat;
-#X obj 59 453 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 59 453 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 81 459 5 0 1 1 spread - -, f 5;
-#X msg 266 138 stop;
+#X msg 318 156 stop;
 #X obj 79 529 env~;
 #X floatatom 79 551 5 0 0 0 - - -, f 5;
 #X floatatom 131 554 5 0 0 0 - - -, f 5;
@@ -6709,9 +6709,9 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X msg 746 318 swap;
 #X obj 697 352 s add;
 #X obj 391 356 tabwrite~ \$0-cello;
-#X obj 696 187 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 696 207 sel 0 1 2;
+#X obj 697 187 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 697 207 sel 0 1 2;
 #N canvas 0 22 506 300 tabname 0;
 #X obj 45 102 f \$0;
 #X floatatom 45 124 5 0 0 0 - - -, f 5;
@@ -6750,12 +6750,12 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X connect 13 0 10 0;
 #X connect 14 0 13 0;
 #X restore 697 231 pd tabname;
-#X msg 808 99 analyze baritono.aif;
+#X msg 798 99 analyze baritono.aif;
 #X obj 700 458 s onset;
 #X msg 700 437 onset \$1;
 #X floatatom 700 419 5 0 0 0 - - -, f 5;
 #X obj 124 321 r onset;
-#X msg 461 132 amp 5;
+#X msg 431 132 amp 5;
 #X obj 781 458 s envelope;
 #X obj 133 345 r envelope;
 #X msg 781 437 envelope \$1;
@@ -6767,6 +6767,12 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X text 76 77 3 cosine;
 #X text 77 93 4 rectangular (no envelope);
 #X restore 867 460 pd envelope;
+#X floatatom 551 101 5 0 0 0 - - -, f 5;
+#X msg 551 120 cloud \$1;
+#X obj 551 142 s cloud;
+#X obj 138 370 r cloud;
+#X msg 806 119 analyze -o baritono.aif;
+#X msg 193 302 print;
 #X connect 2 0 65 1;
 #X connect 3 0 0 0;
 #X connect 3 1 1 0;
@@ -6881,3 +6887,8 @@ melSpacing \, window e come flag -o # \, -v # \, -nr # \, -i %s \,
 #X connect 116 0 65 0;
 #X connect 117 0 115 0;
 #X connect 118 0 117 0;
+#X connect 120 0 121 0;
+#X connect 121 0 122 0;
+#X connect 123 0 65 0;
+#X connect 124 0 62 0;
+#X connect 125 0 65 0;
